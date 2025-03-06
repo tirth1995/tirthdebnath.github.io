@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>SCRAMBLED PUZZLE GAME</h1>
+    <h2>To play, simply click on the "cell" blocks in the table to arrange the scrambled numbers in sequential order.</h2>
+    <h2>Achieve the best play against your rivals with as much less moves as possible, in the shortest period of time!</h2>
+
+    <div id="puzzle-container">
+        <!-- 4x4 Puzzle grid (16 cells) -->
+        <div id="cell00" class="tile tile1" data-row="0" data-column="0"></div>
+        <div id="cell01" class="tile tile2" data-row="0" data-column="1"></div>
+        <div id="cell02" class="tile tile3" data-row="0" data-column="2"></div>
+        <div id="cell03" class="tile tile4" data-row="0" data-column="3"></div>
+        
+        <div id="cell10" class="tile tile5" data-row="1" data-column="0"></div>
+        <div id="cell11" class="tile tile6" data-row="1" data-column="1"></div>
+        <div id="cell12" class="tile tile7" data-row="1" data-column="2"></div>
+        <div id="cell13" class="tile tile8" data-row="1" data-column="3"></div>
+        
+        <div id="cell20" class="tile tile9" data-row="2" data-column="0"></div>
+        <div id="cell21" class="tile tile10" data-row="2" data-column="1"></div>
+        <div id="cell22" class="tile tile11" data-row="2" data-column="2"></div>
+        <div id="cell23" class="tile tile12" data-row="2" data-column="3"></div>
+        
+        <div id="cell30" class="tile tile13" data-row="3" data-column="0"></div>
+        <div id="cell31" class="tile tile14" data-row="3" data-column="1"></div>
+        <div id="cell32" class="tile tile15" data-row="3" data-column="2"></div>
+        <div id="cell33" class="tile tile16" data-row="3" data-column="3"></div>
+    </div>
+
+    <div id="buttons">
+        <button id="startGame">Simple Game</button>
+        <button id="newGame">New Game</button>
+        <div id="timer">
+            Time spent in the current game: <span id="time">00:00</span>
+        </div>
+        <div id="moves">
+            Number of Moves: <span id="moveCount">0</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

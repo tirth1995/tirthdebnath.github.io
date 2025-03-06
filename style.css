@@ -1,0 +1,75 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+#puzzle-container {
+    margin: 20px auto;
+    border: 2px solid #000;
+    padding: 10px;
+    width: 360px; 
+    height: 360px; 
+    display: grid; 
+    grid-template-columns: repeat(4, 90px);
+    grid-template-rows: repeat(4, 90px);
+    gap: 2px;
+}
+
+
+.tile {
+    width: 90px;
+    height: 90px;
+    background-image: url('puzzle.png'); /* Ensure the image exists */
+    background-size: 360px 360px; /* Image size */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Tile positioning */
+.tile1 {background-position: 0px 0px;}
+.tile2 {background-position: -90px 0px;}
+.tile3 {background-position: -180px 0px;}
+.tile4 {background-position: -270px 0px;}
+.tile5 {background-position: 0px -90px;}
+.tile6 {background-position: -90px -90px;}
+.tile7 {background-position: -180px -90px;}
+.tile8 {background-position: -270px -90px;}
+.tile9 {background-position: 0px -180px;}
+.tile10 {background-position: -90px -180px;}
+.tile11 {background-position: -180px -180px;}
+.tile12 {background-position: -270px -180px;}
+.tile13 {background-position: 0px -270px;}
+.tile14 {background-position: -90px -270px;}
+.tile15 {background-position: -180px -270px;}
+.tile16 {background: white; cursor: default;}
+
+
+/* Buttons */
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#timer {
+    font-size: 20px;
+    margin: 20px;
+}
+
+#buttons {
+    margin-top: 20px;
+}
