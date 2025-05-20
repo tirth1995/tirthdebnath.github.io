@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Tirth's Website</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* Fade-in effect styles */
+        section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            margin-bottom: 40px;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #6c757d;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            cursor: default; /* no link, just styling */
+        }
+        nav a:hover {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        h2 {
+            color: ##666;
+            transition: color 0.3s ease, transform 0.3s ease;
+            cursor: default;
+        }
+        h2:hover {
+            color: #666;
+            transform: scale(1.05);
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+
+        img {
+            border-radius: 8px;
+            margin-right: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>WELCOME TO TIRTH'S PERSONAL WEBSITE</h2>
+    </header>
+
+    <section id="about-me">
+        <h2>ABOUT ME</h2>
+        <p>Hi, my name is Tirth Debnath. I am currently majoring in Information Technology and minoring in Business 
+        Administration at Wayne State University. Beyond academics, I love hiking and traveling. Exploring new places and tasting diverse cuisines helps me connect with different cultures and expand my perspective. I also enjoy revitalizing old items—whether it's refurbishing furniture, reworking gadgets, or renovating spaces, I find joy in bringing new life to what already exists.</p>
+    </section>
+
+    <section id="education">
+        <h2>EDUCATION</h2>
+        <ul>
+            <li><strong>Wayne State University</strong> — Bachelor of Science in Information Technology (Aug 2024 – May 2026)</li>
+            <li><strong>Macomb Community College</strong> — Associates of General Studies (Aug 2021 – Dec 2023)</li>
+        </ul>
+    </section>
+
+    <section id="skills">
+        <h2>SKILLS</h2>
+        <ul>
+            <li><strong>Languages:</strong> HTML, CSS, JavaScript, C++, SQL, PHP</li>
+            <li><strong>Tools:</strong> Visual Studio, GitHub, Network Protocols, Command Line Interfaces</li>
+            <li><strong>Other Skills:</strong> Graphic Design, Wireshark, Cisco, Microsoft Office Suite</li>
+        </ul>
+    </section>
+
+    <section id="experience">
+        <h2>EXPERIENCE</h2>
+        <ul>
+            <li>
+                <strong>Dietary Aide, Optalis Health and Rehabilitation Center</strong> (Oct 2022 – Present)<br>
+                - Assist in preparing and delivering nutritious meals tailored to individual dietary needs.<br>
+                - Maintain a clean, organized kitchen in compliance with health regulations.
+            </li>
+            <li>
+                <strong>Certified Nursing Assistant (CNA), ProMedica Health Care</strong> (Sep 2021 – Sep 2022)<br>
+                - Maintained accurate patient records following HIPAA guidelines.<br>
+                - Monitored and documented vital signs, reporting changes promptly.<br>
+                - Provided hands-on care including bathing, grooming, dressing, and mobility assistance.
+            </li>
+            <li>
+                <strong>Assistant Manager, 7/11</strong> (Aug 2020 – Sep 2021)<br>
+                - Supported daily operations including cash handling, inventory management, and shift supervision.<br>
+                - Resolved customer issues professionally to ensure positive experiences.<br>
+                - Monitored inventory and coordinated restocking with vendors.
+            </li>
+        </ul>
+    </section>
+
+    <section id="gallery">
+        <h2>GALLERY</h2>
+        <img src="pic1.jpg" alt="Candid picture of me while texting" style="width: 350px; height: 500px;">
+        <img src="pic2.jpg" alt="My last year trip to lighthouse beach" style="width: 350px; height: 500px;">
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Tirth's Personal Page. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Fade-in on scroll effect
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll("section");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        // Smooth scroll for all anchor links (if you add any in the future)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target){
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
